@@ -19,13 +19,13 @@ function App() {
        <hr/>
       </div>
       <div className="list">
-       <h2>{ brands[1] } <span onClick={ ()=>{ modGood(good[1] + 1) } }>👍</span></h2>
+       <h2>{ brands[1] } </h2>
        <p>3월 15일</p>
        <span className="goodScore"> 좋아요 {good[1]} </span>
        <hr/>
       </div>
       <div className="list">
-       <h2>{ brands[2] } <span onClick={ ()=>{ modGood(good[2] + 1) } }>👍</span></h2>
+       <h2>{ brands[2] } </h2>
        <p>3월 14일</p>
        <span className="goodScore"> 좋아요 {good[2]} </span>
        <hr/>
