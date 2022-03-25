@@ -13,22 +13,22 @@ function App() {
         <h2> Velog </h2>
       </div>
       <div className="list">
-       <h2>{ brands[0] } <span onClick={ ()=>{ modGood(good[0] + 1) } }>👍</span></h2>
-       <p>3월 16일</p>
-       <span className="goodScore"> 좋아요 {good[0]} </span>
-       <hr/>
+        <h2>{ brands[0] } <span onClick={ ()=>{ modGood(good[0] + 1) } }>👍</span></h2>
+        <p>3월 16일</p>
+        <span className="goodScore"> 좋아요 {good[0]} </span>
+        <hr/>
       </div>
       <div className="list">
-       <h2>{ brands[1] }</h2>
-       <p>3월 15일</p>
-       <span className="goodScore"> 좋아요 {good[1]} </span>
-       <hr/>
+        <h2>{ brands[1] }</h2>
+        <p>3월 15일</p>
+        <span className="goodScore"> 좋아요 {good[1]} </span>
+        <hr/>
       </div>
       <div className="list">
-       <h2>{ brands[2] }</h2>
-       <p>3월 14일</p>
-       <span className="goodScore"> 좋아요 {good[2]} </span>
-       <hr/>
+        <h2>{ brands[2] }</h2>
+        <p>3월 14일</p>
+        <span className="goodScore"> 좋아요 {good[2]} </span>
+        <hr/>
       </div>
     </div>
   );
