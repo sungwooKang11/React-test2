@@ -14,9 +14,9 @@ function App() {
   let [result, resultMod] = useState("");
   let indicater = "";
   
-  let [myScore, myScoreMod] = useState("0");
+  let [myScore, myScoreMod] = useState(0);
   let myScoreCount = {...myScore};
-  let [comScore, comScoreMod] = useState("0");
+  let [comScore, comScoreMod] = useState(0);
   let comScoreCount = {...comScore};
 
   const scissor = () => {
@@ -37,8 +37,9 @@ function App() {
     }else if (newCom === "paper") {
       indicater = "You win";
       resultMod(indicater);
-      myScoreCount++;
-      myScoreMod(myScoreCount);
+      let a = myScore+1;
+      myScoreMod(a);
+      console.log(myScore);
     }
   }
 
