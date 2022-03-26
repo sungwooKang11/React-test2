@@ -93,14 +93,90 @@ function App() {
   // pp.addEventListener("click", handleBtn);   
 
   let rsp = ["rock", "scissor", "paper"];
-  let [myPick, myPickMod] = useState([""]);
-  let [comPick, comPickMod] = useState([""]);
+  let [myPick, myPickMod] = useState("");
+  let [comPick, comPickMod] = useState("");
+  
   let newMine = [...myPick];
   let newCom = [...comPick];
+  
   let [result, resultMod] = useState("");
   let indicater = "";
+  
   let [myScore, myScoreMod] = useState("0");
   let myScoreCount = [...myScore];
+  let [comScore, comScoreMod] = useState("0");
+  let comScoreCount = [...comScore];
+
+  const scissor = () => {
+    newMine = "scissor";
+    myPickMod(newMine);
+    myScoreCount = 0;
+    comPlay();
+
+    if (newCom === "rock") {
+      indicater = "You lose";
+      resultMod(indicater);
+      comScoreCount++;
+      comScoreMod(comScoreCount);
+    }else if (newCom === "scissor") {
+      indicater = "Drew";
+      resultMod(indicater);
+    }else if (newCom === "paper") {
+      indicater = "You win";
+      resultMod(indicater);
+      myScoreCount++;
+      myScoreMod(myScoreCount);
+    }
+  }
+
+  const rock = () => {
+    newMine = "rock";
+    myPickMod(newMine);
+
+    comPlay();
+
+    if (newCom === "rock") {
+      indicater = "Drew";
+      resultMod(indicater);
+    }else if (newCom === "scissor") {
+      indicater = "You win";
+      resultMod(indicater);
+      myScoreCount++;
+      myScoreMod(myScoreCount);
+    }else if (newCom === "paper") {
+      indicater = "You lose";
+      resultMod(indicater);
+      comScoreCount++;
+      comScoreMod(comScoreCount);
+    }
+  }
+
+  const paper = () => {
+    newMine = "paper";
+    myPickMod(newMine);
+
+    comPlay();
+
+    if (newCom === "rock") {
+      indicater = "You win";
+      resultMod(indicater);
+      myScoreCount++;
+      myScoreMod(myScoreCount);
+    }else if (newCom === "scissor") {
+      indicater = "You lose";
+      resultMod(indicater);
+      comScoreCount++;
+      comScoreMod(comScoreCount);
+    }else if (newCom === "paper") {
+      indicater = "Drew";
+      resultMod(indicater);
+    }
+  }
+
+  const comPlay = () => {
+    newCom = rsp[Math.floor(Math.random()* rsp.length)];
+    comPickMod(newCom);
+  }
 
   return (
     <div className="App">
@@ -108,22 +184,22 @@ function App() {
         <h1 className="welcome">Welcome to R.S.P.</h1>
         <div className="con1">
             <span className="p">score</span>
-            <span className="score">0</span>
+            <span className="score">{ myScore }</span>
             <div className="valCon">
-                <h1 className="myValue">Plz Press Your Choice</h1>
+                <h1 className="myValue">{ myPick }</h1>
             </div>    
             <div className="btnDiv">
-            <button className="scissors">가위</button>
-            <button className="rock">바위</button>
-            <button className="paper">보</button>
+            <button className="scissors" onClick={ scissor }>Scissor</button>
+            <button className="rock" onClick={ rock }>Rock</button>
+            <button className="paper" onClick={ paper }>Paper</button>
             </div>
         </div>
-        <h1 className="wl"></h1>
+        <h1 className="wl">{ result }</h1>
         <div className="con2">
-            <span className="p2">score</span>
-            <span className="score2">0</span>
+            <span className="p">score</span>
+            <span className="score2">{ comScore }</span>
             <div className="valCon2">
-                <h1 className="comValue">See Computer Choice</h1>
+                <h1 className="comValue">{ comPick }</h1>
             </div>    
         </div>
     </div>
