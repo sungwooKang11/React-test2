@@ -56,8 +56,8 @@ function App() {
     }else if (newCom === "scissor") {
       indicater = "You win";
       resultMod(indicater);
-      myScoreCount++;
-      myScoreMod(myScoreCount);
+      let a = myScore+1;
+      myScoreMod(a);
     }else if (newCom === "paper") {
       indicater = "You lose";
       resultMod(indicater);
@@ -76,8 +76,8 @@ function App() {
     if (newCom === "rock") {
       indicater = "You win";
       resultMod(indicater);
-      myScoreCount++;
-      myScoreMod(myScoreCount);
+      let a = myScore+1;
+      myScoreMod(a);
     }else if (newCom === "scissor") {
       indicater = "You lose";
       resultMod(indicater);
