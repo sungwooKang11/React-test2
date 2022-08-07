@@ -101,7 +101,8 @@ function App() {
             <span className="score">{ myScore }</span>
             <div className="valCon">
                 <h1 className="myValue">{ myPick }</h1>
-            </div>    
+            </div>
+            
             <div className="btnDiv">
             <button className="scissors" onClick={ scissor }>Scissor</button>
             <button className="rock" onClick={ rock }>Rock</button>
